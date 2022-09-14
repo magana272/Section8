@@ -11,9 +11,10 @@ import (
 
 func main() {
 	r := mux.NewRouter()
+	routes.RegisterProfileRouter(r)
 	routes.RegisterLocationRouter(r)
 	routes.RegisterOwnerRouter(r)
-	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./my-app/build/")))
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./website")))
 	fmt.Println("Now Lsitening and Serveing at LocalHost:8080")
 	log.Fatal(http.ListenAndServe("localhost:8080", r))
 

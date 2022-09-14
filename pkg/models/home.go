@@ -10,7 +10,7 @@ var db *gorm.DB
 // `Home` belongs to `Person`, `OwnerID` is the foreign key
 type Home struct {
 	gorm.Model
-	Owner    string `gorm:"foreignkey:Name;references:Owner"`
+	Owner    int    `gorm:"foreignkey:ID;references:Owner"`
 	City     string `json:"city"`
 	Address  string `json:"address"`
 	ZipCode  string `json:"zipcode"`
@@ -25,7 +25,7 @@ func init() {
 }
 
 func (h *Home) CreateHome(p *Person) *Home {
-	h.Owner = p.Name
+	h.Owner = int(p.ID)
 	db.NewRecord(h)
 	db.Create(&h)
 	return h
@@ -44,4 +44,9 @@ func DeleteHome(id uint) *Home {
 	var getHome Home
 	db.Where("HomeID=?", id).Find(&getHome)
 	return &getHome
+}
+
+func (h *Home) UpdateHome(id uint) *Home {
+	panic("Not implemented")
+
 }
