@@ -1,0 +1,12 @@
+.login{
+    background-color: white;
+
+}
+.container.login {
+    background-color: white;
+
+
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

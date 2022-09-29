@@ -1,0 +1,34 @@
+{{define "navbar"}}
+<nav class="relative container mx-auto p-2 bg-stone-200 shadow-md">
+    <!-- Flex container -->
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+        <div class="pt-2 border-black border-2 shadow-md">
+            <a href="/" class="p-4">LAAH</a>
+        </div>
+      <!-- Menu Items -->
+      <div class="hidden space-x-6 md:flex">
+        <a href="/home" class="hover:text-darkGrayishBlue">View Homes</a>
+        <a href="/assistents" class="hover:text-darkGrayishBlue">Get Assistants</a>
+        <a href="/" class="hover:text-darkGrayishBlue">About Us</a>
+        <a href="#" class="hover:text-darkGrayishBlue"></a>
+        <a href="#" class="hover:text-darkGrayishBlue"></a>
+      </div>
+      <!-- Button -->
+      <a
+        href="/login"
+        class="hidden p-3 px-6 pt-2 text-white bg-black rounded-full baseline hover:bg-opacity-75 md:block"
+        >Sign-in </a
+      >
+
+      <!-- Hamburger Icon -->
+      <button id="menu-btn" class="block hamburger md:hidden focus:outline-none bg-black">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
+
+  </nav>
+  <!--Left Side Bar -->
+ {{ end }}

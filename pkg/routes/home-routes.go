@@ -11,4 +11,6 @@ var RegisterLocationRouter = func(r *mux.Router) {
 	r.HandleFunc("/home/{id}", controllers.GetHomeByID).Methods("GET")
 	r.HandleFunc("/home/{id}", controllers.UpdateHome).Methods("PUT")
 	r.HandleFunc("/home/{id}", controllers.DeleteHome).Methods("DELETE")
+	r.HandleFunc("/upload", controllers.UploadHome).Methods("POST")
+
 }

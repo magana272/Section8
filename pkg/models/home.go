@@ -20,7 +20,7 @@ type Home struct {
 func init() {
 	config.Connect()
 	db = config.GetDb()
-	db.AutoMigrate(&Home{}, &Person{})
+	db.AutoMigrate(&Home{}, &Person{}, Session{}, User{})
 
 }
 
@@ -42,7 +42,7 @@ func GetHomeById(id uint) (*Home, *gorm.DB) {
 }
 func DeleteHome(id uint) *Home {
 	var getHome Home
-	db.Where("HomeID=?", id).Find(&getHome)
+	db.Where("HomeID=?", id).Delete(&getHome)
 	return &getHome
 }
 

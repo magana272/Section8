@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="./style/style.css">
+    
+        <script src = "js/index.js"></script>
+        <script src = "js/login.js"></script>
+    
+        <title>LAAH</title>
+    </head>
+<body>
+    {{template "navbar" .}}
+
+    <div>  
+        <h1> Profile</h1>
+        <div >Name </div>
+        <div> Age</div>
+        <div>Phone Number</div>
+    </div>
+    <div>
+        <h1>Applications</h1>
+
+        <table> 
+            <tr> Home </tr>
+            <tr> Status</tr>
+            <tr> Last Updated </tr>
+            <tr>
+                <td> Home 1</td>
+                <td> Pending</td>
+                <td> 12/16/2022</td>
+            </tr>
+        </table>
+    </div>
+
+    <form
+      id="form"
+      enctype="multipart/form-data"
+      action="/upload"
+      method="POST"
+    >
+      <input class="input file-input" type="file" name="file" multiple />
+      <button class="button" type="submit">Submit</button>
+    </form>
+
+
+
+</body>
+</html>
